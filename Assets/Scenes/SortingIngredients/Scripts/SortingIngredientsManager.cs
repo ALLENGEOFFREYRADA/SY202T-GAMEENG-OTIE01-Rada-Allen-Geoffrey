@@ -34,7 +34,7 @@ public class SortingIngredientsManager : MonoBehaviour
         for (int i = 0; i < ingredientsCount / 2; i++)
         {
             int x = Random.Range(-10, 11);
-            int y = Random.Range(1, 4);
+            int y = Random.Range(2, 4);
             ingredients.Add(Instantiate(ingredientPrefab, new Vector3(x, y, 0), Quaternion.identity) as GameObject);
             ingredients[ingredients.Count - 1].tag = "leftIngredient";
             spriteRenderer = ingredients[ingredients.Count - 1].GetComponent<Renderer>() as SpriteRenderer;
@@ -44,7 +44,7 @@ public class SortingIngredientsManager : MonoBehaviour
         for (int i = 0; i < ingredientsCount / 2; i++)
         {
             int x = Random.Range(-10, 11);
-            int y = Random.Range(1, 4);
+            int y = Random.Range(2, 4);
             ingredients.Add(Instantiate(ingredientPrefab, new Vector3(x, y, 0), Quaternion.identity) as GameObject);
             ingredients[ingredients.Count - 1].tag = "rightIngredient";
             spriteRenderer = ingredients[ingredients.Count - 1].GetComponent<Renderer>() as SpriteRenderer;
@@ -60,7 +60,19 @@ public class SortingIngredientsManager : MonoBehaviour
 
     void Update()
     {
-        if (leftSorter.GetComponent<CheckCollisions>().collisions == 2 && rightSorter.GetComponent<CheckCollisions>().collisions == 2)
+        bool somethingDragging = false;
+
+        foreach (GameObject ingredient in ingredients)
+        {
+            if (ingredient.GetComponent<DragTransform>().dragging == true)
+            {
+                somethingDragging = true;
+            }
+        } 
+
+        if (leftSorter.GetComponent<CheckCollisions>().collisions == 2 &&
+            rightSorter.GetComponent<CheckCollisions>().collisions == 2 &&
+            somethingDragging == false)
         {
             SceneManager.LoadScene(sceneName:"SortingIngredients");
         }
