@@ -5,7 +5,7 @@ using UnityEngine;
 class DragTransform : MonoBehaviour
 {
 
-    private bool dragging = false;
+    public bool dragging = false;
     private float distance;
     private Vector3 startDist;
  

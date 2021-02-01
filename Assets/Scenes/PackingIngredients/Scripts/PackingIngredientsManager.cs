@@ -26,5 +26,25 @@ public class PackingIngredientsManager : MonoBehaviour
         {
             SceneManager.LoadScene(sceneName:"PackingIngredients");
         }
+
+        GameObject[] dying = new GameObject[ingredients.Count];
+
+        int i = 0;
+
+        foreach (GameObject ingredient in ingredients)
+        {
+           if (ingredient.GetComponent<DragTransform>().dragging == false && ingredient.tag == "dying")
+           {
+                dying[i] = ingredient;
+                i += 1;
+               
+           }
+        }
+
+        foreach (GameObject ingredient in dying)
+        {
+            ingredients.Remove(ingredient);
+            DestroyImmediate(ingredient);
+        }
     }
 }

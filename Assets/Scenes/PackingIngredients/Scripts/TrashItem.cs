@@ -9,8 +9,12 @@ public class TrashItem : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        manager.GetComponent<PackingIngredientsManager>().ingredients.Remove(col.gameObject);
-        Destroy(col.gameObject);
+        col.gameObject.tag = "dying";
+    }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        col.gameObject.tag = "Untagged";
     }
 
 }
