@@ -14,8 +14,16 @@ public class PackingIngredientsManager : MonoBehaviour
     {
         for (int i = 0; i < ingredientsCount; i++)
         {
-            int x = Random.Range(-10, 11);
-            int y = Random.Range(-4, 5);
+            float x = Random.Range(-4.5f, 1.5f);
+            float y = Random.Range(-2f, 1f);
+            if (x > -1.5f && x < 1.5f) 
+            {
+                x += 3f;
+            }
+            if (y > -0.5f && y < 0.5f)
+            {
+                y += 1f;
+            }
             ingredients.Add(Instantiate(ingredientPrefab, new Vector3(x, y, 0), Quaternion.identity) as GameObject);
         }
     }

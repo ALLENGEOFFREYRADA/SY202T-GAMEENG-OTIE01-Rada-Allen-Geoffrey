@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2432301806248295829, guid: 97047f4ebfe83a04fbe3fe0f0b0a0238, type: 3}
+  m_Sprite: {fileID: -407774699277236136, guid: 4e0a1caf6148dac4b9fba31a520d3795, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,13 +99,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: -2432301806248295829, guid: 97047f4ebfe83a04fbe3fe0f0b0a0238, type: 3}
-  - {fileID: -7576874432042752839, guid: 97047f4ebfe83a04fbe3fe0f0b0a0238, type: 3}
-  - {fileID: -4074711270985794095, guid: 97047f4ebfe83a04fbe3fe0f0b0a0238, type: 3}
-  - {fileID: 7641124845627605941, guid: 97047f4ebfe83a04fbe3fe0f0b0a0238, type: 3}
-  - {fileID: 8474640244576014681, guid: 97047f4ebfe83a04fbe3fe0f0b0a0238, type: 3}
-  - {fileID: 7781682652552636025, guid: 97047f4ebfe83a04fbe3fe0f0b0a0238, type: 3}
-  - {fileID: 7355374725913390886, guid: 97047f4ebfe83a04fbe3fe0f0b0a0238, type: 3}
+  - {fileID: -407774699277236136, guid: 4e0a1caf6148dac4b9fba31a520d3795, type: 3}
+  - {fileID: 8332575774718081532, guid: 4e0a1caf6148dac4b9fba31a520d3795, type: 3}
+  - {fileID: -7242522001002437528, guid: 4e0a1caf6148dac4b9fba31a520d3795, type: 3}
+  - {fileID: -1404298502914197777, guid: 4e0a1caf6148dac4b9fba31a520d3795, type: 3}
+  - {fileID: -3444562430248252764, guid: 4e0a1caf6148dac4b9fba31a520d3795, type: 3}
+  - {fileID: -3787347331188729084, guid: 4e0a1caf6148dac4b9fba31a520d3795, type: 3}
+  - {fileID: 3946059411715812394, guid: 4e0a1caf6148dac4b9fba31a520d3795, type: 3}
+  - {fileID: 7870480730772048316, guid: 4e0a1caf6148dac4b9fba31a520d3795, type: 3}
+  - {fileID: -5177447029556865912, guid: 4e0a1caf6148dac4b9fba31a520d3795, type: 3}
 --- !u!50 &7337215334835639084
 Rigidbody2D:
   serializedVersion: 4
@@ -157,12 +159,12 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
