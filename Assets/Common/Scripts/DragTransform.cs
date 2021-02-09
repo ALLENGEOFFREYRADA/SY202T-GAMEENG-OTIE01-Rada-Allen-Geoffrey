@@ -34,33 +34,22 @@ class DragTransform : MonoBehaviour
             switch (touch.phase)
             {
             case TouchPhase.Began:
-                //if you touch the car
                 if (GetComponent<Collider2D> () == Physics2D.OverlapPoint (touchPosition)) 
                 {
-                    //get the offset between position you touch
                     deltax = touchPosition.x - transform.position.x;
                     deltay = touchPosition.y - transform.position.y;
 
-                    //if touch began within  the car collider
-                    //then it is allowed to move
-
                     dragging = true;
-
                 }
                 break;
 
-            //you move your finger
             case TouchPhase.Moved:                   
-                //if you touches the car and move is allowed
                 if (GetComponent<Collider2D> () == Physics2D.OverlapPoint (touchPosition) && dragging)
-                    transform.position = new Vector2(0, touchPosition.y - deltay);
+                    transform.position = new Vector2(touchPosition.x - deltax, touchPosition.y - deltay);
 
                 break;
 
-            //you released your finger
             case TouchPhase.Ended:
-                //restore intial parameters
-                //when touch is ended
                 dragging = false;
                 break;
             }

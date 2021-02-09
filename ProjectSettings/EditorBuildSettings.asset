@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TransitionScene/TransitionScene.unity
+    guid: 618811136a33aa64ebbac92ccb7de053
+  - enabled: 1
     path: Assets/Scenes/PackingIngredients/PackingIngredients.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/CauldronStir/CauldronStir.unity
+    guid: d5f9c25357efa9e41865321b420fd75d
+  - enabled: 1
+    path: Assets/Scenes/RitualCandles/RitualCandles.unity
+    guid: c423a52059872cf4fbe5d3d03cfc6247
+  - enabled: 1
+    path: Assets/Scenes/SortingIngredients/SortingIngredients.unity
+    guid: 6f150b5a95e3b86468398a0a2ffdc832
   m_configObjects: {}

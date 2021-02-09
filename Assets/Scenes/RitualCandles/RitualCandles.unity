@@ -256,7 +256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdb77d779db3d8946ae4691675b39597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  candleNumber: 0
+  candleNumber: 8
+  candlePrefab: {fileID: 8987953810245330456, guid: fc3e82aa2d4b8de4b9ad3449c0187a76, type: 3}
 --- !u!4 &1190942727
 Transform:
   m_ObjectHideFlags: 0

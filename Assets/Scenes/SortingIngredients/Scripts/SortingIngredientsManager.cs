@@ -74,7 +74,7 @@ public class SortingIngredientsManager : MonoBehaviour
             rightSorter.GetComponent<CheckCollisions>().collisions == 2 &&
             somethingDragging == false)
         {
-            SceneManager.LoadScene(sceneName:"SortingIngredients");
+            SceneManager.LoadScene(sceneName:"TransitionScene");
         }
     }
     

@@ -24,7 +24,7 @@ public class PackingIngredientsManager : MonoBehaviour
             {
                 y += 1f;
             }
-            ingredients.Add(Instantiate(ingredientPrefab, new Vector3(x, y, 0), Quaternion.identity) as GameObject);
+            ingredients.Add(Instantiate(ingredientPrefab, new Vector3(x, y, 0), Quaternion.identity));
         }
     }
     
@@ -32,7 +32,7 @@ public class PackingIngredientsManager : MonoBehaviour
     {
         if (ingredients.Count == 0) 
         {
-            SceneManager.LoadScene(sceneName:"PackingIngredients");
+            SceneManager.LoadScene(sceneName:"TransitionScene");
         }
 
         GameObject[] dying = new GameObject[ingredients.Count];
