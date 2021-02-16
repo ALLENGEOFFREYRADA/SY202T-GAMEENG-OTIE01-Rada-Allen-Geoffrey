@@ -9,6 +9,12 @@ public class TransitionManager : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(NextScene());
+    }
+
+    IEnumerator NextScene()
+    {
+        yield return new WaitForSeconds(5f);
         int randomIndex = Random.Range(0, sceneNames.Length);
         SceneManager.LoadScene(sceneName:sceneNames[randomIndex]);
     }

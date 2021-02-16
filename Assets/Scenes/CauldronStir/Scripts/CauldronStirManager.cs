@@ -46,11 +46,11 @@ public class CauldronStirManager : MonoBehaviour
                     {
                         if (Mathf.Abs(lastTouch.x - firstTouch.x) > Mathf.Abs(lastTouch.y - firstTouch.y))
                         { 
-                            if ((lastTouch.x > firstTouch.x) && !atRight)  
+                            if ((lastTouch.x > firstTouch.x) && atRight)  
                             {  
                                 Stir();
                             }
-                            else if (atRight)
+                            else if ((lastClick.x < firstClick.x) && atRight)
                             { 
                                 Stir();
                             }
@@ -71,15 +71,13 @@ public class CauldronStirManager : MonoBehaviour
                 lastClick = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
                 if (Mathf.Abs(lastClick.x - firstClick.x) > dragDistance || Mathf.Abs(lastClick.y - firstClick.y) > dragDistance)
                 {
-                    Debug.Log("hey");
                     if (Mathf.Abs(lastClick.x - firstClick.x) > Mathf.Abs(lastClick.y - firstClick.y))
                     { 
-                        Debug.Log("wasup");
                         if ((lastClick.x > firstClick.x) && !atRight)  
                         {  
                             Stir();
                         }
-                        else if (atRight)
+                        else if ((lastClick.x < firstClick.x) && atRight)
                         { 
                             Stir();
                         }
