@@ -7,8 +7,28 @@ public class TransitionManager : MonoBehaviour
 {
     private string[] sceneNames = new string[4] {"RitualCandles", "CauldronStir", "PackingIngredients", "SortingIngredients"};
 
+    public GameObject heart;
+    public GameObject bar;
+
+    private GameObject gameManager;
+
     void Start()
     {
+        gameManager = GameObject.Find("GameManager");
+
+        int health = gameManager.GetComponent<GameManager>().health;
+        int progress = gameManager.GetComponent<GameManager>().progress;
+
+        for (int i = 0; i < health; i++)
+        {
+            Instantiate(heart, new Vector3(-3f + i * 3f, 2f, 0f), Quaternion.identity);
+        }
+
+        for (int i = 0; i < progress; i++)
+        {
+            Instantiate(bar, new Vector3(-3.5f + i, -0.031f, 0f), Quaternion.identity);
+        }
+
         StartCoroutine(NextScene());
     }
 

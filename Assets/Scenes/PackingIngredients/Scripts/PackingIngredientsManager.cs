@@ -10,8 +10,12 @@ public class PackingIngredientsManager : MonoBehaviour
     public int ingredientsCount = 4;
     public List<GameObject> ingredients = new List<GameObject>();
 
+    private GameObject gameManager;
+
     void Start()
     {
+        gameManager = GameObject.Find("GameManager");
+        StartCoroutine(Timer());
         for (int i = 0; i < ingredientsCount; i++)
         {
             float x = Random.Range(-4.5f, 1.5f);
@@ -32,6 +36,7 @@ public class PackingIngredientsManager : MonoBehaviour
     {
         if (ingredients.Count == 0) 
         {
+            gameManager.GetComponent<GameManager>().progress++;
             SceneManager.LoadScene(sceneName:"TransitionScene");
         }
 
@@ -55,4 +60,12 @@ public class PackingIngredientsManager : MonoBehaviour
             DestroyImmediate(ingredient);
         }
     }
+
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(5f);
+        gameManager.GetComponent<GameManager>().health--;
+        SceneManager.LoadScene(sceneName:"TransitionScene");
+    }
+
 }

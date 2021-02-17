@@ -19,7 +19,15 @@ public class CauldronStirManager : MonoBehaviour
 
     private bool atRight = true;
     private int stirs = 0;
+
+    private GameObject gameManager;
  
+    void Start()
+    {
+        gameManager = GameObject.Find("GameManager");
+        StartCoroutine(Timer());
+    }
+
     void Update()
     {
         if (Application.platform == RuntimePlatform.Android)
@@ -101,8 +109,16 @@ public class CauldronStirManager : MonoBehaviour
         atRight = !atRight;
         if (stirs == 10)
         {
+            gameManager.GetComponent<GameManager>().progress++;
             SceneManager.LoadScene(sceneName:"TransitionScene");
         }
+    }
+
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(5f);
+        gameManager.GetComponent<GameManager>().health--;
+        SceneManager.LoadScene(sceneName:"TransitionScene");
     }
 
 }

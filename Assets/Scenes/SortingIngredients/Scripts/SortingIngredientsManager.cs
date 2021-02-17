@@ -15,8 +15,12 @@ public class SortingIngredientsManager : MonoBehaviour
     public GameObject rightDisplay;
     private List<GameObject> ingredients = new List<GameObject>();
 
+    private GameObject gameManager;
+
     void Start()
     {
+        gameManager = GameObject.Find("GameManager");
+        StartCoroutine(Timer());
         int leftIngredientIndex = Random.Range(0, sprites.Length);
         int rightIngredientIndex = Random.Range(0, sprites.Length);
         SpriteRenderer spriteRenderer;
@@ -74,8 +78,16 @@ public class SortingIngredientsManager : MonoBehaviour
             rightSorter.GetComponent<CheckCollisions>().collisions == 2 &&
             somethingDragging == false)
         {
+            gameManager.GetComponent<GameManager>().progress++;
             SceneManager.LoadScene(sceneName:"TransitionScene");
         }
+    }
+    
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(5f);
+        gameManager.GetComponent<GameManager>().health--;
+        SceneManager.LoadScene(sceneName:"TransitionScene");
     }
     
 }
