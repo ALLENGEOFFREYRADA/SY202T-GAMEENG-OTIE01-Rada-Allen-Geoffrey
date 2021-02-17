@@ -21,12 +21,12 @@ public class TransitionManager : MonoBehaviour
 
         for (int i = 0; i < health; i++)
         {
-            Instantiate(heart, new Vector3(-3f + i * 3f, 2f, 0f), Quaternion.identity);
+            Instantiate(heart, new Vector3(-48f + i * 48f, 12f, 0f), Quaternion.identity);
         }
 
         for (int i = 0; i < progress; i++)
         {
-            Instantiate(bar, new Vector3(-3.5f + i, -0.031f, 0f), Quaternion.identity);
+            Instantiate(bar, new Vector3(-56f + i * 16f, -24.5f, 0f), Quaternion.identity);
         }
 
         StartCoroutine(NextScene());

@@ -37,8 +37,8 @@ public class SortingIngredientsManager : MonoBehaviour
 
         for (int i = 0; i < ingredientsCount / 2; i++)
         {
-            float x = Random.Range(-4.5f, 4.5f);
-            float y = Random.Range(2f, 1f);
+            float x = Random.Range(-72f, 72f);
+            float y = Random.Range(8f, 37);
             ingredients.Add(Instantiate(ingredientPrefab, new Vector3(x, y, 0), Quaternion.identity) as GameObject);
             ingredients[ingredients.Count - 1].tag = "leftIngredient";
             spriteRenderer = ingredients[ingredients.Count - 1].GetComponent<Renderer>() as SpriteRenderer;
@@ -47,8 +47,8 @@ public class SortingIngredientsManager : MonoBehaviour
 
         for (int i = 0; i < ingredientsCount / 2; i++)
         {
-            float x = Random.Range(-4.5f, 4.5f);
-            float y = Random.Range(2f, 1f);
+            float x = Random.Range(-72f, 72f);
+            float y = Random.Range(8f, 37);
             ingredients.Add(Instantiate(ingredientPrefab, new Vector3(x, y, 0), Quaternion.identity) as GameObject);
             ingredients[ingredients.Count - 1].tag = "rightIngredient";
             spriteRenderer = ingredients[ingredients.Count - 1].GetComponent<Renderer>() as SpriteRenderer;

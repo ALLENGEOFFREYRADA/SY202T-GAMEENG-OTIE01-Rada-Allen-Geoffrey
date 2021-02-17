@@ -15,7 +15,7 @@ public class CauldronStirManager : MonoBehaviour
 
     private Vector3 firstTouch;   
     private Vector3 lastTouch;   
-    private float dragDistance = 3f;  
+    private float dragDistance = 45f;  
 
     private bool atRight = true;
     private int stirs = 0;

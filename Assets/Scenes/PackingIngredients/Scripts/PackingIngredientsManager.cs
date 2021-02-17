@@ -18,16 +18,8 @@ public class PackingIngredientsManager : MonoBehaviour
         StartCoroutine(Timer());
         for (int i = 0; i < ingredientsCount; i++)
         {
-            float x = Random.Range(-4.5f, 1.5f);
-            float y = Random.Range(-2f, 1f);
-            if (x > -1.5f && x < 1.5f) 
-            {
-                x += 3f;
-            }
-            if (y > -0.5f && y < 0.5f)
-            {
-                y += 1f;
-            }
+            float x = Random.Range(-72f, 72f);
+            float y = Random.Range(8f, 37f);
             ingredients.Add(Instantiate(ingredientPrefab, new Vector3(x, y, 0), Quaternion.identity));
         }
     }
