@@ -18,14 +18,15 @@ public class PackingIngredientsManager : MonoBehaviour
         StartCoroutine(Timer());
         for (int i = 0; i < ingredientsCount; i++)
         {
-            float x = Random.Range(-72f, 72f);
-            float y = Random.Range(8f, 37f);
+            float x = Random.Range(-64f, 64f);
+            float y = Random.Range(0f, 28f);
             ingredients.Add(Instantiate(ingredientPrefab, new Vector3(x, y, 0), Quaternion.identity));
         }
     }
     
     void Update()
     {
+        if (Time.timeScale == 0) return;
         if (ingredients.Count == 0) 
         {
             gameManager.GetComponent<GameManager>().progress++;
@@ -38,12 +39,12 @@ public class PackingIngredientsManager : MonoBehaviour
 
         foreach (GameObject ingredient in ingredients)
         {
-           if (ingredient.GetComponent<DragTransform>().dragging == false && ingredient.tag == "dying")
-           {
+        if (ingredient.GetComponent<DragTransform>().dragging == false && ingredient.tag == "dying")
+        {
                 dying[i] = ingredient;
                 i += 1;
-               
-           }
+            
+        }
         }
 
         foreach (GameObject ingredient in dying)
@@ -55,7 +56,8 @@ public class PackingIngredientsManager : MonoBehaviour
 
     IEnumerator Timer()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(5f);
         gameManager.GetComponent<GameManager>().health--;
         SceneManager.LoadScene(sceneName:"TransitionScene");
     }

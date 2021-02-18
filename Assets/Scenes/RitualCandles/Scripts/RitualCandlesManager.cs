@@ -18,8 +18,8 @@ public class RitualCandlesManager : MonoBehaviour
         StartCoroutine(Timer());
         for (int i = 0; i < candleNumber; i++)
         {
-            float x = Random.Range(-72f, 72f);
-            float y = Random.Range(-37f, 37f);
+            float x = Random.Range(-64f, 64f);
+            float y = Random.Range(-28f, 28f);
             Instantiate(candlePrefab, new Vector3(x, y, 0), Quaternion.identity);
         }
     }
@@ -31,12 +31,13 @@ public class RitualCandlesManager : MonoBehaviour
         {
             gameManager.GetComponent<GameManager>().progress++;
             SceneManager.LoadScene(sceneName:"TransitionScene");
-        }
+        } 
     }
 
     IEnumerator Timer()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(5f);
         gameManager.GetComponent<GameManager>().health--;
         SceneManager.LoadScene(sceneName:"TransitionScene");
     }

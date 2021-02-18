@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class TransitionManager : MonoBehaviour
 {
     private string[] sceneNames = new string[4] {"RitualCandles", "CauldronStir", "PackingIngredients", "SortingIngredients"};
+    private string nextScene;
 
     public GameObject heart;
     public GameObject bar;
@@ -29,14 +30,23 @@ public class TransitionManager : MonoBehaviour
             Instantiate(bar, new Vector3(-56f + i * 16f, -24.5f, 0f), Quaternion.identity);
         }
 
+        if (health == 0 || progress == 8)
+        {
+            nextScene = "MainMenu";
+        }
+        else 
+        {
+            int randomIndex = Random.Range(0, sceneNames.Length);
+            nextScene = sceneNames[randomIndex];
+        }
+
         StartCoroutine(NextScene());
     }
 
     IEnumerator NextScene()
     {
         yield return new WaitForSeconds(5f);
-        int randomIndex = Random.Range(0, sceneNames.Length);
-        SceneManager.LoadScene(sceneName:sceneNames[randomIndex]);
+        SceneManager.LoadScene(sceneName:nextScene);
     }
 
 }

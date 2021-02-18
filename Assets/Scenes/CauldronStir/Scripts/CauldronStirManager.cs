@@ -30,6 +30,7 @@ public class CauldronStirManager : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0) return;
         if (Application.platform == RuntimePlatform.Android)
         {
             if (Input.touchCount == 1) 
@@ -54,7 +55,7 @@ public class CauldronStirManager : MonoBehaviour
                     {
                         if (Mathf.Abs(lastTouch.x - firstTouch.x) > Mathf.Abs(lastTouch.y - firstTouch.y))
                         { 
-                            if ((lastTouch.x > firstTouch.x) && atRight)  
+                            if ((lastTouch.x > firstTouch.x) && !atRight)  
                             {  
                                 Stir();
                             }
@@ -116,7 +117,8 @@ public class CauldronStirManager : MonoBehaviour
 
     IEnumerator Timer()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(5f);
         gameManager.GetComponent<GameManager>().health--;
         SceneManager.LoadScene(sceneName:"TransitionScene");
     }

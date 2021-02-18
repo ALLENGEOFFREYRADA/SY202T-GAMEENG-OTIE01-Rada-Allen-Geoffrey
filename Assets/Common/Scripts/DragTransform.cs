@@ -26,6 +26,7 @@ class DragTransform : MonoBehaviour
  
     void Update()
     {
+        if (Time.timeScale == 0) return;
         if (Input.touchCount > 0) 
         {
             Touch touch = Input.GetTouch(0);
