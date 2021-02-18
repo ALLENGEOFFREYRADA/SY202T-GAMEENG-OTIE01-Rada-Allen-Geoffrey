@@ -401,6 +401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1503758877}
   - component: {fileID: 1503758878}
+  - component: {fileID: 1503758879}
   m_Layer: 0
   m_Name: MinigameManager
   m_TagString: Untagged
@@ -437,6 +438,20 @@ MonoBehaviour:
   cauldron: {fileID: 1407824326}
   rightCauldron: {fileID: 5327950094024008212, guid: 4e0a1caf6148dac4b9fba31a520d3795, type: 3}
   leftCauldron: {fileID: -7826287199498012479, guid: 4e0a1caf6148dac4b9fba31a520d3795, type: 3}
+  swipe: {fileID: 1503758879}
+--- !u!114 &1503758879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503758876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63555e70be4158f4d8990dbae4b24b82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDragging: 0
 --- !u!1 &1857081439
 GameObject:
   m_ObjectHideFlags: 0

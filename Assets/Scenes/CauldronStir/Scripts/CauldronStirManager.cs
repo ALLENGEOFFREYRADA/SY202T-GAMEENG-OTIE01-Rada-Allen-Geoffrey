@@ -9,18 +9,12 @@ public class CauldronStirManager : MonoBehaviour
     public GameObject cauldron;
     public Sprite rightCauldron;
     public Sprite leftCauldron;
-
-    private Vector3 firstClick;
-    private Vector3 lastClick;
-
-    private Vector3 firstTouch;   
-    private Vector3 lastTouch;   
-    private float dragDistance = 45f;  
-
+ 
     private bool atRight = true;
     private int stirs = 0;
 
     private GameObject gameManager;
+    public Swipe swipe;
  
     void Start()
     {
@@ -31,68 +25,13 @@ public class CauldronStirManager : MonoBehaviour
     void Update()
     {
         if (Time.timeScale == 0) return;
-        if (Application.platform == RuntimePlatform.Android)
+        if (swipe.swipeLeft && atRight)
         {
-            if (Input.touchCount == 1) 
-            {
-                Touch touch = Input.GetTouch(0); 
-                switch (touch.phase)
-                {
-                case TouchPhase.Began:
-                    firstTouch = touch.position;
-                    lastTouch = touch.position;
-                    break;
-
-                case TouchPhase.Moved:                   
-                    lastTouch = touch.position;
-
-                    break;
-
-                case TouchPhase.Ended:
-                    lastTouch = touch.position;  
-    
-                    if (Mathf.Abs(lastTouch.x - firstTouch.x) > dragDistance || Mathf.Abs(lastTouch.y - firstTouch.y) > dragDistance)
-                    {
-                        if (Mathf.Abs(lastTouch.x - firstTouch.x) > Mathf.Abs(lastTouch.y - firstTouch.y))
-                        { 
-                            if ((lastTouch.x > firstTouch.x) && !atRight)  
-                            {  
-                                Stir();
-                            }
-                            else if ((lastClick.x < firstClick.x) && atRight)
-                            { 
-                                Stir();
-                            }
-                        }
-                    }
-                    break;
-                }
-            }
+            Stir();
         }
-        else
+        else if (swipe.swipeRight && !atRight)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                firstClick = Camera.main.ScreenToWorldPoint(Input.mousePosition);                
-            }
-            else if (Input.GetMouseButtonUp(0))
-            {
-                lastClick = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
-                if (Mathf.Abs(lastClick.x - firstClick.x) > dragDistance || Mathf.Abs(lastClick.y - firstClick.y) > dragDistance)
-                {
-                    if (Mathf.Abs(lastClick.x - firstClick.x) > Mathf.Abs(lastClick.y - firstClick.y))
-                    { 
-                        if ((lastClick.x > firstClick.x) && !atRight)  
-                        {  
-                            Stir();
-                        }
-                        else if ((lastClick.x < firstClick.x) && atRight)
-                        { 
-                            Stir();
-                        }
-                    }
-                }
-            }
+            Stir();
         }
     }
 

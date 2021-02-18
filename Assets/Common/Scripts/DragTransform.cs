@@ -39,9 +39,8 @@ class DragTransform : MonoBehaviour
                 {
                     deltax = touchPosition.x - transform.position.x;
                     deltay = touchPosition.y - transform.position.y;
-
-                    dragging = true;
                 }
+                dragging = true;
                 break;
 
             case TouchPhase.Moved:                   
@@ -56,12 +55,15 @@ class DragTransform : MonoBehaviour
             }
 
         }
-
-        if (dragging)
+        else
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            Vector3 rayPoint = ray.GetPoint(distance);
-            transform.position = rayPoint + startDist;
+            if (dragging)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                Vector3 rayPoint = ray.GetPoint(distance);
+                transform.position = rayPoint + startDist;
+            }
         }
+        
     }
 }
