@@ -39,12 +39,11 @@ public class PackingIngredientsManager : MonoBehaviour
 
         foreach (GameObject ingredient in ingredients)
         {
-        if (ingredient.GetComponent<DragTransform>().dragging == false && ingredient.tag == "dying")
-        {
-                dying[i] = ingredient;
-                i += 1;
-            
-        }
+            if (ingredient.GetComponent<DragTransform>().dragging == false && ingredient.tag == "dying")
+            {
+                    dying[i] = ingredient;
+                    i += 1;            
+            }
         }
 
         foreach (GameObject ingredient in dying)

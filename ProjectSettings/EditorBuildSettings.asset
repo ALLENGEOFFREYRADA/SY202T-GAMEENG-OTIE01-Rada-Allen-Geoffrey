@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SortingIngredients/SortingIngredients.unity
     guid: 6f150b5a95e3b86468398a0a2ffdc832
+  - enabled: 1
+    path: Assets/Scenes/CatchingChickens/CatchingChickens.unity
+    guid: f582e3d245619ca498df5b300a4ae51f
   m_configObjects: {}

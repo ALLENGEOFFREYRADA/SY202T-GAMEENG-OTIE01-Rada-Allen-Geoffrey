@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TransitionManager : MonoBehaviour
 {
-    private string[] sceneNames = new string[4] {"RitualCandles", "CauldronStir", "PackingIngredients", "SortingIngredients"};
+    private string[] sceneNames = new string[5] {"RitualCandles", "CauldronStir", "PackingIngredients", "SortingIngredients", "CatchingChickens"};
     private string nextScene;
 
     public GameObject heart;
@@ -32,6 +32,8 @@ public class TransitionManager : MonoBehaviour
 
         if (health == 0 || progress == 8)
         {
+            health = 3;
+            progress = 0;
             nextScene = "MainMenu";
         }
         else 
