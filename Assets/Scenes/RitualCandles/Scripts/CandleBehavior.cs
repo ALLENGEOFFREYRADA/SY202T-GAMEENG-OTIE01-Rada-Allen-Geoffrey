@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class CandleBehavior : MonoBehaviour
 {
-    public Sprite litSprite;
-    private GameObject gameManager;
+
+    private float maxEffectCooldown = 0.2f;
+    private float effectCooldown = 0;
 
     private bool lit = false;
+
+    public GameObject firePrefab;
+    public Sprite litSprite;
+    private GameObject gameManager;
 
     void OnMouseDown()
     {
         gameManager = GameObject.Find("MinigameManager");
-        GetComponent<SpriteRenderer>().sprite = litSprite;
         if (!lit)
         {
             lit = true;
@@ -36,6 +40,17 @@ public class CandleBehavior : MonoBehaviour
                     gameManager.GetComponent<RitualCandlesManager>().AddLitCandle();
                 }
             }
+        }
+
+        if (lit)
+        {
+            effectCooldown += Time.deltaTime;
+            if (effectCooldown > maxEffectCooldown)
+            {
+                Instantiate(firePrefab, new Vector3(transform.position.x, transform.position.y + 4f, 0), Quaternion.identity);
+                effectCooldown = 0f;
+            }
+            
         }
     }
 
