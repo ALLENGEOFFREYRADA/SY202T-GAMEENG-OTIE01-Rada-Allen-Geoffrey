@@ -32,8 +32,8 @@ public class TransitionManager : MonoBehaviour
 
         if (health == 0 || progress == 8)
         {
-            health = 3;
-            progress = 0;
+            gameManager.GetComponent<GameManager>().health = 3;
+            gameManager.GetComponent<GameManager>().progress = 0;
             nextScene = "MainMenu";
         }
         else 

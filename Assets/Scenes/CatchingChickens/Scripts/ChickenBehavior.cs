@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChickenBehavior : MonoBehaviour
 {
 
-    public float accelerationTime = 5f;
+    public float maxTimeLeft = 1f;
     public float maxSpeed = 10f;
     private Vector2 movement;
     private float timeLeft;
@@ -34,8 +34,8 @@ public class ChickenBehavior : MonoBehaviour
 
         if (timeLeft <= 0)
         {
-            movement = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-            timeLeft += accelerationTime;
+            movement = new Vector2(Random.Range(-maxSpeed, maxSpeed), Random.Range(-maxSpeed, maxSpeed));
+            timeLeft = maxTimeLeft;
         }
 
         if (Input.touchCount > 0) 

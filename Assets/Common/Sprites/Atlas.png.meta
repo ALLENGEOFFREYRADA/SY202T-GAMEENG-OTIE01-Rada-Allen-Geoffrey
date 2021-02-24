@@ -515,6 +515,18 @@ TextureImporter:
   - first:
       213: 703316215228858992
     second: Fire 4
+  - first:
+      213: -5206644523654691916
+    second: Drag
+  - first:
+      213: 6582207593987013538
+    second: Swipe LR
+  - first:
+      213: 2114176695594709982
+    second: Tap
+  - first:
+      213: 2489748775411591063
+    second: Swipe U
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -2085,7 +2097,7 @@ TextureImporter:
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2106,7 +2118,7 @@ TextureImporter:
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2127,7 +2139,7 @@ TextureImporter:
         width: 4
         height: 2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2148,7 +2160,7 @@ TextureImporter:
         width: 2
         height: 2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2156,6 +2168,90 @@ TextureImporter:
       bones: []
       spriteID: 0720d751f5ea2c900800000000000000
       internalID: 703316215228858992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drag
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 233
+        width: 38
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b344d744684eb7b0800000000000000
+      internalID: -5206644523654691916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swipe LR
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 209
+        width: 38
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ab7975cee2b85b50800000000000000
+      internalID: 6582207593987013538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tap
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 185
+        width: 38
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed3f455d080175d10800000000000000
+      internalID: 2114176695594709982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swipe U
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 113
+        width: 38
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7972f5ae15d5d8220800000000000000
+      internalID: 2489748775411591063
       vertices: []
       indices: 
       edges: []
