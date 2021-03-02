@@ -14,9 +14,14 @@ public class CandleBehavior : MonoBehaviour
     public Sprite litSprite;
     private GameObject gameManager;
 
-    void OnMouseDown()
+    void Start()
     {
         gameManager = GameObject.Find("MinigameManager");
+    }
+
+    void OnMouseDown()
+    {
+        if (GameManager.paused == true) return;
         if (!lit)
         {
             lit = true;
@@ -26,7 +31,7 @@ public class CandleBehavior : MonoBehaviour
  
     void Update()
     {
-        if (Time.timeScale == 0) return;
+        if (GameManager.paused == true) return;
         if (Input.touchCount > 0) 
         {
             Touch touch = Input.GetTouch(0);

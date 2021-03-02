@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class RitualCandlesManager : MonoBehaviour
+public class RitualCandlesManager : MinigameManager
 {
 
     public int candleNumber;
     public GameObject candlePrefab;
     private int litCandles;
 
-    private GameObject gameManager;
-
     void Start()
     {
-        gameManager = GameObject.Find("GameManager");
-        StartCoroutine(Timer());
+        base.Init();
         for (int i = 0; i < candleNumber; i++)
         {
             float x = Random.Range(-64f, 64f);
@@ -29,17 +26,7 @@ public class RitualCandlesManager : MonoBehaviour
         litCandles++;
         if (litCandles == candleNumber)
         {
-            gameManager.GetComponent<GameManager>().progress++;
-            SceneManager.LoadScene(sceneName:"TransitionScene");
+            base.Win();
         } 
     }
-
-    IEnumerator Timer()
-    {
-        yield return new WaitForSecondsRealtime(1f);
-        yield return new WaitForSecondsRealtime(5f);
-        gameManager.GetComponent<GameManager>().health--;
-        SceneManager.LoadScene(sceneName:"TransitionScene");
-    }
-
 }

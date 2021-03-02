@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: ab444c577166d6345a1bd77b21f53247
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - winMark: {fileID: 1621136749937922066, guid: 7edecfbeb964df74ebe37ba6c361a3b8, type: 3}
+  - loseMark: {fileID: 3759281800711399042, guid: 5dbbf94c4126d6b41a5a12a340c24a7b, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

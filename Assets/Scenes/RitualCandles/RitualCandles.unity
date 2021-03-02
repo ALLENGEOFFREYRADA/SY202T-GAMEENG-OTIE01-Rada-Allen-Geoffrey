@@ -275,7 +275,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.1254902, g: 0.11764706, b: 0.13333334, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -433,6 +433,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdb77d779db3d8946ae4691675b39597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winMark: {fileID: 1621136749937922066, guid: 7edecfbeb964df74ebe37ba6c361a3b8, type: 3}
+  loseMark: {fileID: 3759281800711399042, guid: 5dbbf94c4126d6b41a5a12a340c24a7b, type: 3}
   candleNumber: 8
   candlePrefab: {fileID: 8987953810245330456, guid: fc3e82aa2d4b8de4b9ad3449c0187a76, type: 3}
 --- !u!4 &1190942727

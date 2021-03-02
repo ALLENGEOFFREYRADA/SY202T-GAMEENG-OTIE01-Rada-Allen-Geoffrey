@@ -275,7 +275,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.1254902, g: 0.11764706, b: 0.13333334, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -351,6 +351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c100dd7f25051409464b7ee368ad3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winMark: {fileID: 1621136749937922066, guid: 7edecfbeb964df74ebe37ba6c361a3b8, type: 3}
+  loseMark: {fileID: 3759281800711399042, guid: 5dbbf94c4126d6b41a5a12a340c24a7b, type: 3}
   ingredientPrefab: {fileID: 8449118511580636815, guid: 1c9753e596274ed4d8da4b92be6d420b, type: 3}
   ingredientsCount: 4
   ingredients: []

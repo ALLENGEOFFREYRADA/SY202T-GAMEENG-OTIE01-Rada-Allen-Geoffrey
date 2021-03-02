@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PackingIngredientsManager : MonoBehaviour
+public class PackingIngredientsManager : MinigameManager
 {
 
     public GameObject ingredientPrefab; 
     public int ingredientsCount = 4;
     public List<GameObject> ingredients = new List<GameObject>();
 
-    private GameObject gameManager;
-
     void Start()
     {
-        gameManager = GameObject.Find("GameManager");
-        StartCoroutine(Timer());
+        base.Init();
         for (int i = 0; i < ingredientsCount; i++)
         {
             float x = Random.Range(-64f, 64f);
@@ -26,11 +23,10 @@ public class PackingIngredientsManager : MonoBehaviour
     
     void Update()
     {
-        if (Time.timeScale == 0) return;
+        if (GameManager.paused == true) return;
         if (ingredients.Count == 0) 
         {
-            gameManager.GetComponent<GameManager>().progress++;
-            SceneManager.LoadScene(sceneName:"TransitionScene");
+            base.Win();
         }
 
         GameObject[] dying = new GameObject[ingredients.Count];
@@ -52,13 +48,4 @@ public class PackingIngredientsManager : MonoBehaviour
             DestroyImmediate(ingredient);
         }
     }
-
-    IEnumerator Timer()
-    {
-        yield return new WaitForSecondsRealtime(1f);
-        yield return new WaitForSecondsRealtime(5f);
-        gameManager.GetComponent<GameManager>().health--;
-        SceneManager.LoadScene(sceneName:"TransitionScene");
-    }
-
 }

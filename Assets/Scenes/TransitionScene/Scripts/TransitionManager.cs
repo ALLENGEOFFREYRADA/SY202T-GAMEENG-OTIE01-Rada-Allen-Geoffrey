@@ -30,8 +30,14 @@ public class TransitionManager : MonoBehaviour
             Instantiate(bar, new Vector3(-56f + i * 16f, -24.5f, 0f), Quaternion.identity);
         }
 
+        if (progress == 4)
+        {   
+            Time.timeScale = 1.5f;
+        }
+
         if (health == 0 || progress == 8)
         {
+            Time.timeScale = 1f;
             gameManager.GetComponent<GameManager>().health = 3;
             gameManager.GetComponent<GameManager>().progress = 0;
             nextScene = "MainMenu";

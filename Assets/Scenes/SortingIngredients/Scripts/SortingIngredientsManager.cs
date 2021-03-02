@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SortingIngredientsManager : MonoBehaviour
+public class SortingIngredientsManager : MinigameManager
 {
 
     public GameObject ingredientPrefab; 
@@ -15,12 +15,9 @@ public class SortingIngredientsManager : MonoBehaviour
     public GameObject rightDisplay;
     private List<GameObject> ingredients = new List<GameObject>();
 
-    private GameObject gameManager;
-
     void Start()
     {
-        gameManager = GameObject.Find("GameManager");
-        StartCoroutine(Timer());
+        base.Init();
         int leftIngredientIndex = Random.Range(0, sprites.Length);
         int rightIngredientIndex = Random.Range(0, sprites.Length);
         SpriteRenderer spriteRenderer;
@@ -64,7 +61,7 @@ public class SortingIngredientsManager : MonoBehaviour
 
     void Update()
     {
-        if (Time.timeScale == 0) return;
+        if (GameManager.paused == true) return;
         bool somethingDragging = false;
 
         foreach (GameObject ingredient in ingredients)
@@ -79,17 +76,7 @@ public class SortingIngredientsManager : MonoBehaviour
             rightSorter.GetComponent<CheckCollisions>().collisions == 2 &&
             somethingDragging == false)
         {
-            gameManager.GetComponent<GameManager>().progress++;
-            SceneManager.LoadScene(sceneName:"TransitionScene");
+            base.Win();
         }
     }
-    
-    IEnumerator Timer()
-    {
-        yield return new WaitForSecondsRealtime(1f);
-        yield return new WaitForSecondsRealtime(5f);
-        gameManager.GetComponent<GameManager>().health--;
-        SceneManager.LoadScene(sceneName:"TransitionScene");
-    }
-    
 }

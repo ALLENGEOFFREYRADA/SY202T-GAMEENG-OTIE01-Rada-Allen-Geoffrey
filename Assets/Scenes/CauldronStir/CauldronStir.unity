@@ -160,7 +160,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.1254902, g: 0.11764706, b: 0.13333334, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -530,6 +530,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22d1ffac62b5c64eabda535eb0992c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winMark: {fileID: 1621136749937922066, guid: 7edecfbeb964df74ebe37ba6c361a3b8, type: 3}
+  loseMark: {fileID: 3759281800711399042, guid: 5dbbf94c4126d6b41a5a12a340c24a7b, type: 3}
   cauldron: {fileID: 1407824326}
   rightCauldron: {fileID: 5327950094024008212, guid: 4e0a1caf6148dac4b9fba31a520d3795, type: 3}
   leftCauldron: {fileID: -7826287199498012479, guid: 4e0a1caf6148dac4b9fba31a520d3795, type: 3}

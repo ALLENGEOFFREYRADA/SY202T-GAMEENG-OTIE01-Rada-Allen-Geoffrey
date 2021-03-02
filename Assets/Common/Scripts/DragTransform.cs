@@ -12,6 +12,7 @@ class DragTransform : MonoBehaviour
  
     void OnMouseDown()
     {
+        if (GameManager.paused == true) return;
         distance = Vector3.Distance(transform.position, Camera.main.transform.position);
         dragging = true;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -26,7 +27,7 @@ class DragTransform : MonoBehaviour
  
     void Update()
     {
-        if (Time.timeScale == 0) return;
+        if (GameManager.paused == true) return;
         if (Input.touchCount > 0) 
         {
             Touch touch = Input.GetTouch(0);

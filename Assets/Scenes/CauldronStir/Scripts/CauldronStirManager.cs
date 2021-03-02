@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CauldronStirManager : MonoBehaviour
+public class CauldronStirManager : MinigameManager
 {
 
     public GameObject cauldron;
@@ -13,18 +13,16 @@ public class CauldronStirManager : MonoBehaviour
     private bool atRight = true;
     private int stirs = 0;
 
-    private GameObject gameManager;
     public Swipe swipe;
  
     void Start()
     {
-        gameManager = GameObject.Find("GameManager");
-        StartCoroutine(Timer());
+        base.Init();
     }
 
     void Update()
     {
-        if (Time.timeScale == 0) return;
+        if (GameManager.paused == true) return;
         if (swipe.swipeLeft && atRight)
         {
             Stir();
@@ -49,17 +47,7 @@ public class CauldronStirManager : MonoBehaviour
         atRight = !atRight;
         if (stirs == 10)
         {
-            gameManager.GetComponent<GameManager>().progress++;
-            SceneManager.LoadScene(sceneName:"TransitionScene");
+            base.Win();
         }
     }
-
-    IEnumerator Timer()
-    {
-        yield return new WaitForSecondsRealtime(1f);
-        yield return new WaitForSecondsRealtime(5f);
-        gameManager.GetComponent<GameManager>().health--;
-        SceneManager.LoadScene(sceneName:"TransitionScene");
-    }
-
 }

@@ -21,14 +21,14 @@ public class ChickenBehavior : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (Time.timeScale == 0) return;
+        if (GameManager.paused == true) return;
         gameManager.GetComponent<CatchingChickensManager>().RemoveChicken();
         Destroy(gameObject);
     }
  
     void Update()
     {
-        if (Time.timeScale == 0) return;
+        if (GameManager.paused == true) return;
 
         timeLeft -= Time.deltaTime;
 

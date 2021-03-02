@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static bool paused = false;
     public int health = 0;
     public int progress = 0;
 

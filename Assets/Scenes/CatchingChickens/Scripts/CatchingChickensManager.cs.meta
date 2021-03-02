@@ -3,7 +3,10 @@ guid: b3b992b443ecfd74982466f8efa21459
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - winMark: {instanceID: 0}
+  - loseMark: {instanceID: 0}
+  - chickenPrefab: {fileID: 3786214250585069147, guid: 418ecd68d570eb340b8719eea9ce3a19, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -10,7 +10,6 @@ public class FireMovement : MonoBehaviour
 
     void Update()
     {
-        if (Time.timeScale == 0) return;
         if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9f)
         {
             Destroy(gameObject);

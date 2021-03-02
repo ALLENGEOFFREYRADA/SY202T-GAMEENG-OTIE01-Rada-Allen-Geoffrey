@@ -3,19 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CatchingChickensManager : MonoBehaviour
+public class CatchingChickensManager : MinigameManager
 {
-
     public GameObject chickenPrefab; 
     public int chickenCount = 4;
     public List<GameObject> chickens = new List<GameObject>();
 
-    private GameObject gameManager;
-
     void Start()
     {
-        gameManager = GameObject.Find("GameManager");
-        StartCoroutine(Timer());
+        base.Init();
         for (int i = 0; i < chickenCount; i++)
         {
             float x = Random.Range(-64f, 64f);
@@ -29,17 +25,7 @@ public class CatchingChickensManager : MonoBehaviour
         chickenCount--;
         if (chickenCount == 0)
         {
-            gameManager.GetComponent<GameManager>().progress++;
-            SceneManager.LoadScene(sceneName:"TransitionScene");
+            base.Win();
         }
     }
-
-    IEnumerator Timer()
-    {
-        yield return new WaitForSecondsRealtime(1f);
-        yield return new WaitForSecondsRealtime(5f);
-        gameManager.GetComponent<GameManager>().health--;
-        SceneManager.LoadScene(sceneName:"TransitionScene");
-    }
-
 }
