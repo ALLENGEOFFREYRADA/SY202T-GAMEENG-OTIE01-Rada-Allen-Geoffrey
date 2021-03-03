@@ -10,6 +10,7 @@ public class TransitionManager : MonoBehaviour
 
     public GameObject heart;
     public GameObject bar;
+    public GameObject speedUp;
 
     private GameObject gameManager;
 
@@ -32,6 +33,7 @@ public class TransitionManager : MonoBehaviour
 
         if (progress == 4)
         {   
+            Instantiate(speedUp, transform.position, Quaternion.identity);
             Time.timeScale = 1.5f;
         }
 
